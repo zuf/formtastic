@@ -839,6 +839,11 @@ module Formtastic #:nodoc:
     # You can set :value_as_class => true if you want that LI wrappers contains
     # a class with the wrapped checkbox input value.
     #
+    # By default, the value attribute of each checkbox tag is the @#id@ of each child object in the 
+    # collection, but you can call any other method on the object by passing in a :value_method:
+    # 
+    #   f.input :author, :as => :check_boxes, :value_method => :login
+    #   f.input :tags, :as => :check_boxes, :value_method => :name
     def check_boxes_input(method, options)
       collection = find_collection_for_column(method, options)
       html_options = options.delete(:input_html) || {}
