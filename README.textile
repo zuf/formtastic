@@ -403,7 +403,7 @@ If you have the "ValidationReflection":http://github.com/redinger/validation_ref
 
 h2. Configuration
 
-If you wish, put something like this in config/initializers/formtastic_config.rb:
+If you wish, put something like this in config/initializers/formtastic.rb:
 
 <pre>
   # Set the default text field size when input is a string. Default is 50
@@ -465,8 +465,6 @@ It's a work in progress and a bit rough around the edges still, but I hope you t
 
 On the plus side, it has a comprehensive spec suite and contributions from at least ten independent developers.
 
-"Wishlist":http://wiki.github.com/justinfrench/formtastic/wishlist on the wiki is serving as pretty good documentation for the roadmap to 1.0 and beyond right now, but I'll work on getting a real tracking system or something happening soon.
-
 
 h2. Dependencies
 
@@ -500,10 +498,10 @@ A proof-of-concept (very much a work-in-progress) stylesheet is provided which y
 <%= stylesheet_link_tag "formtastic_changes" %>
 </pre>
 
+
 h2. Got TextMate?
 
-Well...there's a TextMate-bundle in town, dedicated to make usage of Formtastic in the TextMate editor even more of a breeze:
-
+There's a TextMate bundle dedicated to make usage of Formtastic in the TextMate editor even more of a breeze:
 "Formtastic.tmbundle":http://github.com/grimen/formtastic_tmbundle
 
 h2. Contributors
