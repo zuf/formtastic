@@ -2711,7 +2711,24 @@ describe 'Formtastic' do
 
             output_buffer.should have_tag("form fieldset.inputs #post_author_login")
             output_buffer.should_not have_tag("form fieldset.inputs #author_login")
+
           end
+          
+          it 'should nest the inputs with an _attributes suffix on the association name' do
+            @bob.stub!(:column_for_attribute).and_return(mock('column', :type => :string, :limit => 255))
+            semantic_form_for(@new_post) do |builder|
+              builder.inputs :for => [:author, @bob] do |bob_builder|
+                concat(bob_builder.input(:login))
+              end
+            end
+            
+            # Old behaviour
+            # output_buffer.should have_tag("form fieldset.inputs input[@name='post[author][login]']")
+            
+            # New behaviour
+            output_buffer.should have_tag("form fieldset.inputs input[@name='post[author_attributes][login]']")
+          end
+          
 
           it 'should raise an error if :for and block with no argument is given' do
             semantic_form_for(@new_post) do |builder|
