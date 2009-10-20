@@ -2758,36 +2758,6 @@ describe 'Formtastic' do
             end
             
           end 
-            
-            
-          
-          #it 'should nest the inputs with an _attributes suffix on the association name ' do
-          #  
-          #  
-          #  # renders a post[author_attributes][login]
-          #  semantic_form_for(@new_post) do |post|
-          #    post.semantic_fields_for(:author) do |author|
-          #      concat(author.text_field(:login))
-          #    end
-          #  end
-          #
-          #  # renders a post[author_attributes][login]
-          #  
-          #  # renders a post[author_attributes][login]
-          #  
-          #
-          #  # renders a post[author][login]
-          #  semantic_form_for(@new_post) do |post|
-          #    post.inputs :for => @new_post.author do |author|
-          #      concat(author.input(:login))
-          #    end
-          #  end
-          #  
-          #  output_buffer.should have_tag("form input[@name='post[author_attributes][login]']", :count => 4)
-          #  output_buffer.should have_tag("form input[@name='post[author][login]']", :count => 2)
-          #  
-          #end
-          
 
           it 'should raise an error if :for and block with no argument is given' do
             semantic_form_for(@new_post) do |builder|
